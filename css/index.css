@@ -8,8 +8,67 @@ body {
   text-align: center;
 }
 
-main .parrafo {
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex main {
+  padding-top: 3.7em;
+  width: 100vw;
+}
+
+.flex main h2 {
+  font-weight: 700;
+  font-size: 1.7em;
+}
+
+.flex main .parrafo {
   padding: 0px 1em;
+  font-weight: 500;
+}
+
+.flex main .btnProbar {
+  background-color: #6055a5;
+  border: none;
+  border-radius: 10px;
+  width: 90%;
+  padding: 1.3em .1em;
+  margin-top: 2.7em;
+  color: white;
+  font-size: 1.1em;
+  -webkit-box-shadow: 0px 7px 0px 0px rgba(62, 60, 73, 0.3);
+          box-shadow: 0px 7px 0px 0px rgba(62, 60, 73, 0.3);
+}
+
+.flex main .btnProbar span {
+  font-weight: 600;
+}
+
+.flex main form {
+  background-color: white;
+  border-radius: 15px;
+  width: 75vw;
+  margin: 0px auto;
+  margin-top: 1.1em;
+  padding: 1.5em 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.2em;
+}
+
+.flex main form input {
+  font-weight: 600;
+  padding: 1em 1.5em;
+  font-size: .9em;
+  border-radius: 6px;
+  border: 1px solid rgba(62, 60, 73, 0.2);
 }
 
 .attribution {
