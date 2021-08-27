@@ -107,7 +107,6 @@ main {
         padding: 1.5em 1.2em;
         display: flex;
         flex-direction: column;
-        gap: 1.2em;
         box-shadow: 0px 6px rgba($color: $DarkBlue, $alpha: .3);
 
         .msjError {
@@ -116,12 +115,22 @@ main {
             text-align: right;
             position: relative;
             top: -10px;
+            right: -20px;
             font-style: italic;
+
+            i {
+                color: $Red;
+                position: relative;
+                top: -1.5em;
+                right: 2em;
+                font-size: 2em
+            }
         }
 
-        input {
+        .input {
             font-weight: 600;
             padding: 1.1em 1.5em;
+            margin-top: 1.2em;
             font-size: .9em;
             border-radius: 6px;
             border: 1px solid rgba($color: $DarkBlue, $alpha: .2);
@@ -132,12 +141,27 @@ main {
             box-shadow: 0px 0px 2px $Red;
         }
 
+        .marginError {
+            margin: 0px;
+        }
+
+        .marginError2 {
+            margin-top: 1.2em;
+        }
+
         .submit {
             background-color: $Green;
             border: none;
             box-shadow: 0px 4px hsl(154, 59%, 45%);
             text-transform: uppercase;
             color: white;
+            margin-bottom: 1em;
+
+            &:hover {
+                background-color: rgba($color: $Green, $alpha: .6);
+                cursor: pointer;
+                transition: background-color ease .5s;
+            }
         }
 
         p {

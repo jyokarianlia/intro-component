@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/index.css">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -25,19 +26,31 @@
       <button class="btnProbar"><span>Try it free 7 days</span> then<br> $20/mo. thereafter</button>
 
       <form>
-        <input type="text" :class="classErrorName" v-model="firstName" placeholder="First Name">
-        <span v-if='msjErrorNane' class="msjError">First Name cannot by empty</span>
-
-        <input type="text" :class="classErrorLastName" v-model="lastName" placeholder="Last Name">
-        <span v-if='msjErrorLastName' class="msjError">Last Name cannot by empty</span>
+        <input type="text" class="input" :class="classErrorName" v-model="firstName" placeholder="First Name">
+        <span v-if='msjErrorNane' class="msjError">
+          First Name cannot by empty
+          <i class="bi bi-exclamation-circle-fill" v-if='msjErrorNane'></i>
+        </span>
         
-        <input type="email" :class="classErrorEmail" v-model="email" placeholder="Email Address">
-        <span v-if='msjErrorEmail' class="msjError">Looks like this is not an email</span>
+        <input type="text" class="input" :class="classErrorLastName" v-model="lastName" placeholder="Last Name">
+        <span v-if='msjErrorLastName' class="msjError">
+          Last Name cannot by empty
+          <i class="bi bi-exclamation-circle-fill" v-if='msjErrorLastName'></i>
+        </span>
         
-        <input type="password" :class="classErrorPassword" v-model="password" placeholder="Password">
-        <span v-if='msjErrorPassword' class="msjError">Password cannot by empty</span>
+        <input type="email" class="input" :class="classErrorEmail" v-model="email" placeholder="Email Address">
+        <span v-if='msjErrorEmail' class="msjError">
+          Looks like this is not an email
+          <i class="bi bi-exclamation-circle-fill" v-if='msjErrorEmail'></i>
+        </span>
         
-        <input type="button" name="" @click="btnClaimFree" placeholder="" class="submit" value="Claim your free trial " required>
+        <input type="password" class="input" :class="classErrorPassword" v-model="password" placeholder="Password">
+        <span v-if='msjErrorPassword' class="msjError">
+          Password cannot by empty
+          <i class="bi bi-exclamation-circle-fill" v-if='msjErrorPassword'></i>
+        </span>
+        
+        <input type="button" class="input submit" name="" @click="btnClaimFree" placeholder="" value="Claim your free trial " required>
 
         <p>By clicking the button, you are agreeing to<br> our <span>Terms and Services</span></p>
       </form>
