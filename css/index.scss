@@ -21,75 +21,120 @@ body {
     text-align: center;
 }
 
-.flex {
-    display: flex;
-    main {
-        padding-top: 3.7em;
-        width: 100vw;
+main {
+    padding-top: 3.8em;
 
-        h2 {
-            font-weight: 700;
-            font-size: 1.7em;
-        }
+    @media (min-width: 720px) {
+        display: flex;
+        padding-top: 0px;
 
-        .parrafo {
-            padding: 0px 1em;
-            font-weight: 500;
-        }
-
-        .btnProbar {
-            background-color: $Blue;
-            border: none;
-            border-radius: 10px;
-            width: 90%;
-            padding: 1.3em .1em;
-            margin-top: 2.7em;
-            color: white;
-            font-size: 1.1em;
-            box-shadow: 0px 7px 0px 0px rgba($color: $DarkBlue, $alpha: .3);
-
-            span {
-                font-weight: 600;
-            }
-        }
-
-        form {
-            background-color: white;
-            border-radius: 15px;
-            width: 75vw;
-            margin: 1.3em auto;
-            padding: 1.5em 1.2em;
+        .cont {
             display: flex;
             flex-direction: column;
-            gap: 1.2em;
-            box-shadow: 0px 6px rgba($color: $DarkBlue, $alpha: .3);
+            justify-content: center;
+            width: 50vw;
+            height: 93vh;
+            padding-left: 7em;
+            text-align: left;
 
-            input {
-                font-weight: 600;
-                padding: 1.1em 1.5em;
-                font-size: .9em;
-                border-radius: 6px;
-                border: 1px solid rgba($color: $DarkBlue, $alpha: .2);
+            h2 {
+                padding-left: 1.2em;
             }
+        }
 
-            .submit {
-                background-color: $Green;
-                border: none;
-                box-shadow: 0px 4px hsl(154, 59%, 45%);
-                text-transform: uppercase;
-                color: white;
-            }
+        .cont2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            padding-right: 5em;
 
-            p {
-                color: $GrayishBlue;
-                font-size: .7em;
+            .btnProbar {
                 margin-top: 0px;
-                margin-bottom: .5em;
+                width: 84%;
+                padding: 1em;
 
-                span {
-                    color: $Red;
-                    font-weight: 700;
+                br {
+                    display: none;
                 }
+            }
+
+            form {
+                width: 78%;
+                margin-bottom: 0px;
+
+                p {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 1.7em;
+    }
+
+    .parrafo {
+        padding: 0px 2em;
+        font-weight: 500;
+    }
+
+    .btnProbar {
+        background-color: $Blue;
+        border: none;
+        border-radius: 10px;
+        width: 93%;
+        padding: 1.3em .1em;
+        margin-top: 2.6em;
+        color: white;
+        font-size: 1.1em;
+        box-shadow: 0px 7px 0px 0px rgba($color: $DarkBlue, $alpha: .3);
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    form {
+        background-color: white;
+        border-radius: 15px;
+        width: 78vw;
+        margin: 1.3em auto;
+        padding: 1.5em 1.2em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+        box-shadow: 0px 6px rgba($color: $DarkBlue, $alpha: .3);
+
+        input {
+            font-weight: 600;
+            padding: 1.1em 1.5em;
+            font-size: .9em;
+            border-radius: 6px;
+            border: 1px solid rgba($color: $DarkBlue, $alpha: .2);
+        }
+
+        .submit {
+            background-color: $Green;
+            border: none;
+            box-shadow: 0px 4px hsl(154, 59%, 45%);
+            text-transform: uppercase;
+            color: white;
+        }
+
+        p {
+            color: $GrayishBlue;
+            font-size: .7em;
+            margin-top: 0px;
+            margin-bottom: .5em;
+
+            span {
+                color: $Red;
+                font-weight: 700;
             }
         }
     }

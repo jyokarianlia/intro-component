@@ -8,48 +8,101 @@ body {
   text-align: center;
 }
 
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+main {
+  padding-top: 3.8em;
 }
 
-.flex main {
-  padding-top: 3.7em;
-  width: 100vw;
+@media (min-width: 720px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 0px;
+  }
+  main .cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 50vw;
+    height: 93vh;
+    padding-left: 7em;
+    text-align: left;
+  }
+  main .cont h2 {
+    padding-left: 1.2em;
+  }
+  main .cont2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50vw;
+    padding-right: 5em;
+  }
+  main .cont2 .btnProbar {
+    margin-top: 0px;
+    width: 84%;
+    padding: 1em;
+  }
+  main .cont2 .btnProbar br {
+    display: none;
+  }
+  main .cont2 form {
+    width: 78%;
+    margin-bottom: 0px;
+  }
+  main .cont2 form p br {
+    display: none;
+  }
 }
 
-.flex main h2 {
+main h2 {
   font-weight: 700;
   font-size: 1.7em;
 }
 
-.flex main .parrafo {
-  padding: 0px 1em;
+main .parrafo {
+  padding: 0px 2em;
   font-weight: 500;
 }
 
-.flex main .btnProbar {
+main .btnProbar {
   background-color: #6055a5;
   border: none;
   border-radius: 10px;
-  width: 90%;
+  width: 93%;
   padding: 1.3em .1em;
-  margin-top: 2.7em;
+  margin-top: 2.6em;
   color: white;
   font-size: 1.1em;
   -webkit-box-shadow: 0px 7px 0px 0px rgba(62, 60, 73, 0.3);
           box-shadow: 0px 7px 0px 0px rgba(62, 60, 73, 0.3);
 }
 
-.flex main .btnProbar span {
+main .btnProbar span {
   font-weight: 600;
 }
 
-.flex main form {
+main form {
   background-color: white;
   border-radius: 15px;
-  width: 75vw;
+  width: 78vw;
   margin: 1.3em auto;
   padding: 1.5em 1.2em;
   display: -webkit-box;
@@ -64,7 +117,7 @@ body {
           box-shadow: 0px 6px rgba(62, 60, 73, 0.3);
 }
 
-.flex main form input {
+main form input {
   font-weight: 600;
   padding: 1.1em 1.5em;
   font-size: .9em;
@@ -72,7 +125,7 @@ body {
   border: 1px solid rgba(62, 60, 73, 0.2);
 }
 
-.flex main form .submit {
+main form .submit {
   background-color: #38cc8c;
   border: none;
   -webkit-box-shadow: 0px 4px #2fb67c;
@@ -81,14 +134,14 @@ body {
   color: white;
 }
 
-.flex main form p {
+main form p {
   color: #b9b6d3;
   font-size: .7em;
   margin-top: 0px;
   margin-bottom: .5em;
 }
 
-.flex main form p span {
+main form p span {
   color: #ff7a7a;
   font-weight: 700;
 }
