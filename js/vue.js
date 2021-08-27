@@ -12,7 +12,12 @@ const app = new Vue({
         msjErrorNane: false,
         msjErrorLastName: false,
         msjErrorEmail: false,
-        msjErrorPassword: false
+        msjErrorPassword: false,
+        expRegular: {
+            name: /^[a-zA-ZÀ-ÿ\s]+$/,
+            numero: /\D/,
+            email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[A-Za-z0-9]+$/
+        }
     },
     methods: {
         btnClaimFree() {
@@ -20,46 +25,59 @@ const app = new Vue({
                 this.msjErrorNane = true;
                 this.classErrorName = 'inputError';
             } else {
-                this.msjErrorNane = false;
-                this.classErrorName = '';
+                let first = this.expRegular.name.test(this.firstName);
+                let sec = this.expRegular.numero.test(this.firstName);
+                if(first && sec) {
+                    this.msjErrorNane = false;
+                    this.classErrorName = '';
+                } else {
+                    this.msjErrorNane = true;
+                    this.classErrorName = 'inputError';
+                }
             }
 
             if (this.lastName == '') {
                 this.msjErrorLastName = true; 
-                if (this.msjErrorNane) {
-                    this.classErrorLastName = 'inputError marginError';
-                } else {
-                    this.classErrorLastName = 'inputError marginError2';
-                }
+                this.classErrorLastName = this.claseDeError(this.msjErrorNane);
             } else {
-                this.msjErrorLastName = false; 
-                this.classErrorLastName = '';
+                const last = this.expRegular.name.test(this.lastName);
+                if(last) {
+                    this.msjErrorLastName = false; 
+                    this.classErrorLastName = '';
+                } else {
+                    this.msjErrorLastName = true; 
+                    this.classErrorLastName = this.claseDeError(this.msjErrorNane);
+                }
             }
 
             if (this.email == '') { 
                 this.msjErrorEmail = true; 
-                if (this.msjErrorLastName) {
-                    this.classErrorEmail = 'inputError marginError';
-                } else {
-                    this.classErrorEmail = 'inputError marginError2';
-                }
+                this.classErrorEmail = this.claseDeError(this.msjErrorLastName);
             } else {
-                this.msjErrorEmail = false; 
-                this.classErrorEmail = '';
+                const dato = this.expRegular.email.test(this.email);
+                if(dato) {
+                    this.msjErrorEmail = false; 
+                    this.classErrorEmail = '';
+                } else {
+                    this.msjErrorEmail = true; 
+                    this.classErrorEmail = this.claseDeError(this.msjErrorLastName);
+                }
             }
 
             if (this.password == '') { 
                 this.msjErrorPassword = true; 
-                if (this.msjErrorEmail) {
-                    this.classErrorPassword = 'inputError marginError';
-                } else {
-                    this.classErrorPassword = 'inputError marginError2';
-                }
+                this.classErrorPassword = this.claseDeError(this.msjErrorEmail);
             } else {
                 this.msjErrorPassword = false; 
                 this.classErrorPassword = '';
             }
-            console.log('Si esta funcionando el evento');
+        },
+        claseDeError(condicion) {
+            if (condicion) {
+                return 'inputError marginError';
+            } else {
+                return 'inputError marginError2';
+            }
         }
     }
 })
