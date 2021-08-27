@@ -94,6 +94,11 @@ main {
         font-size: 1.1em;
         box-shadow: 0px 7px 0px 0px rgba($color: $DarkBlue, $alpha: .3);
 
+        &:hover {
+            cursor: pointer;
+            background-color: rgba($color: $Blue, $alpha: .8);
+            transition: background-color ease .5s;
+        }
         span {
             font-weight: 600;
         }
