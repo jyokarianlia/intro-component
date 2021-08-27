@@ -71,6 +71,18 @@ const app = new Vue({
                 this.msjErrorPassword = false; 
                 this.classErrorPassword = '';
             }
+
+            if(!this.msjErrorNane && !this.msjErrorLastName && !this.msjErrorEmail && !this.msjErrorPassword) {
+                this.firstName = '';
+                this.lastName = '';
+                this.email = '';
+                this.password = '';
+                Swal.fire(
+                    'Excellent!',
+                    'Your data has been sent correctly, your registration will be verified in your email.',
+                    'success'
+                );
+            }
         },
         claseDeError(condicion) {
             if (condicion) {
@@ -78,6 +90,13 @@ const app = new Vue({
             } else {
                 return 'inputError marginError2';
             }
+        },
+        preRegistro() {
+            Swal.fire(
+                'Interested?',
+                'You must register first',
+                'warning'
+              )
         }
     }
 })
