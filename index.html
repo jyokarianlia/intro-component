@@ -14,7 +14,7 @@
   </style>
 </head>
 <body>
-  <main>
+  <main id="app">
     <div class="cont">
       <h2>Learn to code by<br> watching others</h2>
 
@@ -24,12 +24,20 @@
     <div class="cont2">
       <button class="btnProbar"><span>Try it free 7 days</span> then<br> $20/mo. thereafter</button>
 
-      <form action="" method="post">
-        <input type="text" name="" id="" placeholder="First Name" required>
-        <input type="text" name="" id="" placeholder="Last Name " required>
-        <input type="email" name="" id="" placeholder="Email Address" required>
-        <input type="password" name="" id="" placeholder="Password" required>
-        <input type="submit" name="" id="" placeholder="" class="submit" value="Claim your free trial " required>
+      <form>
+        <input type="text" :class="classErrorName" v-model="firstName" placeholder="First Name">
+        <span v-if='msjErrorNane' class="msjError">First Name cannot by empty</span>
+
+        <input type="text" :class="classErrorLastName" v-model="lastName" placeholder="Last Name">
+        <span v-if='msjErrorLastName' class="msjError">Last Name cannot by empty</span>
+        
+        <input type="email" :class="classErrorEmail" v-model="email" placeholder="Email Address">
+        <span v-if='msjErrorEmail' class="msjError">Looks like this is not an email</span>
+        
+        <input type="password" :class="classErrorPassword" v-model="password" placeholder="Password">
+        <span v-if='msjErrorPassword' class="msjError">Password cannot by empty</span>
+        
+        <input type="button" name="" @click="btnClaimFree" placeholder="" class="submit" value="Claim your free trial " required>
 
         <p>By clicking the button, you are agreeing to<br> our <span>Terms and Services</span></p>
       </form>
@@ -42,5 +50,8 @@
       Coded by <a href="https://github.com/jyokarianlia/intro-component" target="_blank">jyokarianlia</a>.
     </p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="js/vue.js"></script>
 </body>
 </html>
